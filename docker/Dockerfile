@@ -49,7 +49,7 @@ RUN groupadd -g ${GID} ${GROUP_NAME} \
 USER ${USER_NAME}
 
 RUN pip install --upgrade pip setuptools==69.5.1 ninja
-RUN pip install torch==2.0.1+cu124 torchvision==0.15.2+cu124 --index-url https://download.pytorch.org/whl/cu124
+RUN pip install torch==2.4.0+cu124 torchvision==0.19.0+cu124 --index-url https://download.pytorch.org/whl/cu124
 # Install nerfacc and tiny-cuda-nn before installing requirements.txt
 # because these two installations are time consuming and error prone
 RUN pip install git+https://github.com/KAIR-BAIR/nerfacc.git@v0.5.2
