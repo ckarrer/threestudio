@@ -2,7 +2,7 @@
 # https://github.com/cvpaperchallenge/Ascender
 # https://github.com/nerfstudio-project/nerfstudio
 
-FROM nvidia/cuda:11.8.0-devel-ubuntu22.04
+FROM nvidia/cuda:12.4.0-devel-ubuntu22.04
 
 ARG USER_NAME=dreamer
 ARG GROUP_NAME=dreamers
