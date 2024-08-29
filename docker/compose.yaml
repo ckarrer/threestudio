@@ -17,6 +17,7 @@ services:
         - ../:/home/${HOST_USER_NAME:-dreamer}/threestudio
     ports:
         - 7860:7860
+    network_mode: host
     deploy:
       resources:
         reservations:
