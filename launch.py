@@ -103,6 +103,7 @@ def load_custom_modules():
 
 
 def main(args, extras) -> None:
+    print("launch.py main called")
     # set CUDA_VISIBLE_DEVICES if needed, then import pytorch-lightning
     os.environ["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
     env_gpus_str = os.environ.get("CUDA_VISIBLE_DEVICES", None)
