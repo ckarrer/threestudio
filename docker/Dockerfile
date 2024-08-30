@@ -58,4 +58,5 @@ RUN pip install git+https://github.com/NVlabs/tiny-cuda-nn.git#subdirectory=bind
 
 COPY requirements.txt /tmp
 RUN cd /tmp && pip install -r requirements.txt
+RUN pip install -U fastapi pydantic
 WORKDIR /home/${USER_NAME}/threestudio
