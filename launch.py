@@ -86,6 +86,7 @@ def load_custom_modules():
                 continue
             time_before = time.perf_counter()
             success = load_custom_module(module_path)
+            print("load custom module " + module_path + " with success=" + success)
             node_import_times.append(
                 (time.perf_counter() - time_before, module_path, success)
             )
