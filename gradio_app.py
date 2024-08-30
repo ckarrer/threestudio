@@ -81,6 +81,7 @@ model_name_config = [
     ("TextMesh (DeepFloyd-IF)", "configs/gradio/textmesh-if.yaml"),
     ("Latent-NeRF (Stable Diffusion)", "configs/gradio/latentnerf.yaml"),
     ("Fantasia3D (Stable Diffusion, Geometry Only)", "configs/gradio/fantasia3d.yaml"),
+    ("GeoDream (neus)", "custom/threestudio-geodream/configs/geodream-neus.yaml"),
 ]
 model_list = [m[0] for m in model_name_config]
 model_config: Dict[str, Dict[str, Any]] = {}
