@@ -59,4 +59,10 @@ RUN pip install git+https://github.com/NVlabs/tiny-cuda-nn.git#subdirectory=bind
 COPY requirements.txt /tmp
 RUN cd /tmp && pip install -r requirements.txt
 RUN pip install -U fastapi pydantic
+
+# Install extensions
+WORKDIR /home/${USER_NAME}/threestudio/custom
+RUN git clone -b threestudio https://github.com/baaivision/GeoDream.git
+RUN mv GeoDream threestudio-geodream
+
 WORKDIR /home/${USER_NAME}/threestudio
