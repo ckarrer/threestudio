@@ -208,7 +208,7 @@ def run(
     # spawn the training process
     gpu = os.environ.get("CUDA_VISIBLE_DEVICES", "0")
     process = subprocess.Popen(
-        f"python launch.py --config {config_file.name} --train --gpu {gpu} --gradio trainer.enable_progress_bar=false".split()
+        f"python launch.py --verbose --config {config_file.name} --train --gpu {gpu} --gradio trainer.enable_progress_bar=false".split()
         + [
             f'name="{name}"',
             f'tag="{tag}"',
