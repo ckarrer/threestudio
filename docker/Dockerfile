@@ -41,6 +41,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
     python3.10-dev \
     python3-pip \
     wget \
+    libsparsehash-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Change user to non-root user
@@ -65,7 +66,6 @@ WORKDIR /home/${USER_NAME}/threestudio/custom
 RUN git clone -b threestudio https://github.com/baaivision/GeoDream.git
 RUN mv GeoDream threestudio-geodream
 RUN pip install inplace_abn
-RUN apt-get install libsparsehash-dev
 RUN pip install git+https://github.com/mit-han-lab/torchsparse.git@v1.4.0
 
 
