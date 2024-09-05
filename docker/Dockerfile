@@ -64,7 +64,7 @@ RUN pip install -U fastapi pydantic
 WORKDIR /home/${USER_NAME}/threestudio/custom
 
 ## 3dgs extension
-RUN git clone https://github.com/DSaurus/threestudio-3dgs.git
+RUN git clone https://github.com/ckarrer/threestudio-3dgs.git
 RUN cd threestudio-3dgs
 RUN git clone --recursive https://github.com/ashawkey/diff-gaussian-rasterization
 RUN git clone https://github.com/DSaurus/simple-knn.git
