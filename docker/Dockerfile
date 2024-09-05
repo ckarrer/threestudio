@@ -70,6 +70,7 @@ RUN git clone --recursive https://github.com/ashawkey/diff-gaussian-rasterizatio
 RUN git clone https://github.com/DSaurus/simple-knn.git
 RUN pip install ./diff-gaussian-rasterization
 RUN pip install ./simple-knn
+RUN pip install pymeshlab
 
 
 WORKDIR /home/${USER_NAME}/threestudio
