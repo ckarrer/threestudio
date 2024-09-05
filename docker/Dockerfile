@@ -71,6 +71,6 @@ RUN git clone https://github.com/DSaurus/simple-knn.git
 RUN pip install ./diff-gaussian-rasterization
 RUN pip install ./simple-knn
 RUN pip install pymeshlab
-
+RUN pip install plyfile
 
 WORKDIR /home/${USER_NAME}/threestudio
