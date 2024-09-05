@@ -41,7 +41,6 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-ins
     python3.10-dev \
     python3-pip \
     wget \
-    libsparsehash-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Change user to non-root user
@@ -63,10 +62,14 @@ RUN pip install -U fastapi pydantic
 
 # Install extensions
 WORKDIR /home/${USER_NAME}/threestudio/custom
-RUN git clone -b threestudio https://github.com/baaivision/GeoDream.git
-RUN mv GeoDream threestudio-geodream
-RUN pip install inplace_abn
-RUN pip install git+https://github.com/mit-han-lab/torchsparse.git@v1.4.0
+
+## 3dgs extension
+RUN git clone https://github.com/DSaurus/threestudio-3dgs.git
+RUN cd threestudio-3dgs
+RUN git clone --recursive https://github.com/ashawkey/diff-gaussian-rasterization
+RUN git clone https://github.com/DSaurus/simple-knn.git
+RUN pip install ./diff-gaussian-rasterization
+RUN pip install ./simple-knn
 
 
 WORKDIR /home/${USER_NAME}/threestudio
