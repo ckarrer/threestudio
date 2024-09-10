@@ -7,7 +7,7 @@ repos = [
     "https://github.com/DSaurus/simple-knn.git"
 ]
 
-os.chdir("~/threestudio/custom")
+os.chdir("home/threestudio/custom")
 git.Repo.clone_from("https://github.com/ckarrer/threestudio-3dgs.git", "threestudio-3dgs")
 os.chdir("threestudio-3dgs")
 git.Repo.clone_from("https://github.com/ashawkey/diff-gaussian-rasterization.git")
