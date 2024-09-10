@@ -1,6 +1,7 @@
 import git
 import os
 import getpass
+import shutil
 
 repos = [
     "https://github.com/ckarrer/threestudio-3dgs.git",
@@ -10,6 +11,7 @@ repos = [
 
 userName = getpass.getuser()
 os.chdir(f"/home/{userName}/threestudio/custom")
+shutil.rmtree("threestudio-3dgs")
 git.Repo.clone_from("https://github.com/ckarrer/threestudio-3dgs.git", "threestudio-3dgs")
 os.chdir("threestudio-3dgs")
 git.Repo.clone_from("https://github.com/ashawkey/diff-gaussian-rasterization.git", "diff-gaussian-rasterization")
