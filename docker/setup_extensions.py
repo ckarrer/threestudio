@@ -1,5 +1,6 @@
 import git
 import os
+import getpass
 
 repos = [
     "https://github.com/ckarrer/threestudio-3dgs.git",
@@ -7,7 +8,7 @@ repos = [
     "https://github.com/DSaurus/simple-knn.git"
 ]
 
-userName = os.getlogin()
+userName = getpass.getuser()
 os.chdir(f"/home/{userName}/threestudio/custom")
 git.Repo.clone_from("https://github.com/ckarrer/threestudio-3dgs.git", "threestudio-3dgs")
 os.chdir("threestudio-3dgs")
