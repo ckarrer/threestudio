@@ -61,8 +61,14 @@ RUN cd /tmp && pip install -r requirements.txt
 RUN pip install -U fastapi pydantic
 
 # Install extensions dependencies
-# As threestudio/ is created as a volume in compose.yaml, and because volumes are created when starting the container, we can't edit these files.
-# Thus, we need to clone extension repositories before building the image. Call setup_extensions.py before building the Dockerfile.
+# As the threestudio folder is created as a volume in compose.yaml, and because volumes are created when starting the container, these files don't exist as for now and our modifications won't be applied to the volume.
+# Thus, we need to clone extension repositories before building the image: Call setup_extensions.py before building the Dockerfile.
+# But we need to retrieve those git repositories (temporarily) nonetheless, as we need to call pip installs on them
+WORKDIR /home/${USER_NAME}/threestudio/custom
+RUN git clone https://github.com/ckarrer/threestudio-3dgs.git
+RUN cd threestudio-3dgs
+RUN git clone --recursive https://github.com/ashawkey/diff-gaussian-rasterization
+RUN git clone https://github.com/DSaurus/simple-knn.git
 
 # 3dgs extension
 WORKDIR /home/${USER_NAME}/threestudio/custom/threestudio-3dgs
