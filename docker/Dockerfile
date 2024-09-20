@@ -58,7 +58,8 @@ RUN pip install git+https://github.com/NVlabs/tiny-cuda-nn.git#subdirectory=bind
 
 COPY requirements.txt /tmp
 RUN cd /tmp && pip install -r requirements.txt
-RUN pip install -U fastapi pydantic
+# Install specific versions of fastapi and pydantic to https://github.com/haotian-liu/LLaVA/issues/1701 and https://github.com/threestudio-project/threestudio/issues/350
+RUN pip install -U fastapi==0.111.0 pydantic 
 
 # Install extensions dependencies
 # As the threestudio folder is created as a volume in compose.yaml, and because volumes are created when starting the container, these files don't exist as for now and our modifications won't be applied to the volume.
